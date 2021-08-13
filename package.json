@@ -1,0 +1,18 @@
+{
+  "name": "nextjs-wpgraphql-acf",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Albert Kim",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.4.7",
+    "graphql": "^15.5.1",
+    "next": "^10.0.8",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1"
+  }
+}
