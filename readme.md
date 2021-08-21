@@ -2,4 +2,4 @@
 
 Code for the tutorial
 
-https://albertkim.co/blog/how-to-use-wordpress-as-a-headless-graphql-api-and-connect-it-to-next-js-with-apollo
+https://www.albertkim.co/blog/create-a-wordpress-graphql-api-with-advancedcustomfields-connect-nextjs
