@@ -15,29 +15,22 @@ const Wrapper = styled.div`
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
+  img {
+    max-height: 500px;
+    width: auto;
+  }
 `;
 
 const Index = (props) => {
   const {
-    page: { homePageHero },
+    page: { homepagehero },
   } = props;
-
-  let srcMap = {};
-
-  homePageHero.heroImage.srcSet.split(",").forEach((src) => {
-    let srcSplit = src.split(" ");
-    if (srcSplit.length === 3) {
-      srcMap[srcSplit[2]] = srcSplit[1];
-    } else {
-      srcMap[srcSplit[1]] = srcSplit[0];
-    }
-  });
 
   return (
     <Wrapper>
-      <p>{homePageHero.title}</p>
-      <p>{homePageHero.subtitle}</p>
-      <img src={srcMap[`768w`]} alt="" />
+      <p>{homepagehero.title}</p>
+      <p>{homepagehero.subtitle}</p>
+      <img src={homepagehero.image.sourceUrl} alt="" />
     </Wrapper>
   );
 };
@@ -47,13 +40,12 @@ export async function getStaticProps() {
     const { data, errors } = await client.query({
       query: gql`
         query MyQuery {
-          page(id: "cG9zdDo2") {
-            homePageHero {
+          page(id: "cG9zdDo4") {
+            homepagehero {
               title
               subtitle
-              heroImage {
-                altText
-                srcSet
+              image {
+                sourceUrl
               }
             }
           }
